@@ -1,6 +1,6 @@
 # memeify
 
-Change all the symbol names and function names to different capitalizations of a given string.
+Change all the symbol names and function names to different capitalizations of a given string.  
 Note: This script has not been thoroughly tested, and the output may require some massaging.
 
 test.py
