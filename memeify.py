@@ -115,8 +115,10 @@ def main(args):
     imported = get_imports(r)
     parsed = ast.parse(r)
 
-    swapper = SymbolSwapper("wave_check", imported, excludes=["__init__", "self", "Test",
-                            "get_next_move", "get_pos", "grid_width"])
+    if len(args) < 4:
+        args.append([])
+
+    swapper = SymbolSwapper(args[2], imported, excludes=["__init__", "self"] + args[3].split(","))
     tree = swapper.visit(parsed)
 
     swapper.print_stats()
